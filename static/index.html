@@ -16,15 +16,27 @@
 <div id="app">
 <h2>Enter Upcoming Bills:</h2>
 <label>Type</label>
-<input type="text">
+<input type="text" v-model="new_bill_type" placeholder="Enter Type of Bill">
 <label>Name</label>
-<input type="text">
+<input type="text" v-model="new_bill_name" placeholder="Enter name">
 <label>Deadline</label>
-<input type="date">
+<input type="date" v-model="new_bill_deadline">
 <label>Amount</label>
-<input type="text">
+<input type="text" v-model="new_bill_amount">
 
+<h2>Upcoming Bill List:</h2>
+<ul>
+    <li v-for="(bill, index) in bills">
+        <input type="checkbox" v-model="bill.done" class="check">
 
+            <div v-else v-bind:class="{ done: bill.done }">
+                <p> {{ bill.name }}</p>
+                <p> {{ bill.type }} </p>
+                <p> {{ bill.description }} </p>
+                <p> {{ bill.deadline }} </p>
+            </div>
+    </li>
+</ul>
 
 
 </div>
