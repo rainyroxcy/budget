@@ -8,9 +8,9 @@ var app = new Vue({
       {
         type: "Household",
         name: "Rent",
-        description: "N/A",
-        amount: "",
-        done: false,
+        description: "The worst bill in the world",
+        amount: "1500",
+        paid: false,
         editing: false,
         deadline: new Date().toLocaleDateString(),
       },
@@ -20,5 +20,19 @@ var app = new Vue({
     new_bill_description: "",
     new_bill_deadline: "",
     new_bill_amount: "",
+  },
+  created: function () {
+    this.getBills();
+  },
+
+  methods: {
+    getBills: function () {
+      fetch(`${url}/bills`).then(function (response) {
+        response.json().then(function (data) {
+          console.log(data);
+          app.bills = data;
+        });
+      });
+    },
   },
 });
