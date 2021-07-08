@@ -4,5 +4,23 @@
     "express": "^4.17.1",
     "mongo": "^0.1.0",
     "node": "^16.4.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "budget",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainyroxcy/budget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rainyroxcy/budget/issues"
+  },
+  "homepage": "https://github.com/rainyroxcy/budget#readme",
+  "description": ""
 }
