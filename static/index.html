@@ -9,20 +9,26 @@
     <title>Budget App</title>
 </head>
 <body>
+<div id="wrapper">
+<div id="bars"></div>
 <header>
     <h1>Budget App</h1>
 </header>
 <main>
 <div id="app">
+<div class="input-wrapper">
 <h2>Enter Upcoming Bills:</h2>
 <label>Type</label>
 <input type="text" v-model="new_bill_type" placeholder="Enter Type of Bill">
 <label>Name</label>
 <input type="text" v-model="new_bill_name" placeholder="Enter name">
+<label>Description</label>
+<input type="text" v-model="new_bill_description" placeholder="description">
 <label>Deadline</label>
 <input type="date" v-model="new_bill_deadline">
 <label>Amount</label>
 <input type="text" v-model="new_bill_amount">
+</div>
 
 <h2>Upcoming Bill List:</h2>
 <ul>
@@ -41,6 +47,7 @@
 
 </div>
 </main> 
+</div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script src="app.js"></script>   
 </body>
