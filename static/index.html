@@ -1,54 +1,65 @@
 <!-- comment -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Budget App</title>
-</head>
-<body>
-<div id="wrapper">
-<div id="bars"></div>
-<header>
-    <h1>Budget App</h1>
-</header>
-<main>
-<div id="app">
-<div class="input-wrapper">
-<h2>Enter Upcoming Bills:</h2>
-<label>Type</label>
-<input type="text" v-model="new_bill_type" placeholder="Enter Type of Bill">
-<label>Name</label>
-<input type="text" v-model="new_bill_name" placeholder="Enter name">
-<label>Description</label>
-<input type="text" v-model="new_bill_description" placeholder="description">
-<label>Deadline</label>
-<input type="date" v-model="new_bill_deadline">
-<label>Amount</label>
-<input type="text" v-model="new_bill_amount">
-</div>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="bars"></div>
+      <header>
+        <h1>Budget App</h1>
+      </header>
+      <main>
+        <div id="app">
+          <div class="input-wrapper">
+            <h2>Enter Upcoming Bills:</h2>
+            <label>Type</label>
+            <input
+              type="text"
+              v-model="new_bill_type"
+              placeholder="Enter Type of Bill"
+            />
+            <label>Name</label>
+            <input
+              type="text"
+              v-model="new_bill_name"
+              placeholder="Enter name"
+            />
+            <label>Description</label>
+            <input
+              type="text"
+              v-model="new_bill_description"
+              placeholder="description"
+            />
+            <label>Deadline</label>
+            <input type="date" v-model="new_bill_deadline" />
+            <label>Amount</label>
+            <input type="text" v-model="new_bill_amount" />
+          </div>
+          <button v-on:click="createBills()">Add</button>
 
-<h2>Upcoming Bill List:</h2>
-<ul>
-    <li v-for="(bill, index) in bills">
-        <input type="checkbox" v-model="bill.done" class="check">
+          <h2>Upcoming Bill List:</h2>
+          <ul>
+            <li v-for="(bill, index) in bills">
+              <input type="checkbox" v-model="bill.done" class="check" />
 
-            <div v-else v-bind:class="{ done: bill.done }">
-                <p> {{ bill.name }}</p>
-                <p> {{ bill.type }} </p>
-                <p> {{ bill.description }} </p>
-                <p> {{ bill.deadline }} </p>
-            </div>
-    </li>
-</ul>
-
-
-</div>
-</main> 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-<script src="app.js"></script>   
-</body>
+              <div v-else v-bind:class="{ done: bill.done }">
+                <p>{{ bill.name }}</p>
+                <p>{{ bill.type }}</p>
+                <p>{{ bill.description }}</p>
+                <p>{{ bill.deadline }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
